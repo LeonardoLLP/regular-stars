@@ -8,7 +8,7 @@ r = 300
 # Número de lados
 n = 528
 # Número de giros
-full_rotations = 432
+full_rotations = 79
 
 """Proceso a seguir
 En teoría, podemos usar la fórmula de los polígonos regulares para calcular las rotaciones necesarias para realizar la estrella. La fórmula de los ángulos de un polígono regular es
@@ -39,7 +39,7 @@ internal_angle = 180 - a
 t_rot = gcd(full_rotations, n)
 
 """Ni idea de donde sale el 120. El /2 si, pero el 120 no se porqué pero es el valor que funciona"""
-initial_coor = -r/2, -r * (internal_angle / 120)  # / t_rot ???
+initial_coor = -r/2, -r * (internal_angle / 125)  # / t_rot ???
 
 print(t_rot)
 sleep(2)
