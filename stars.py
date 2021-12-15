@@ -1,6 +1,5 @@
 from turtle import *
-
-pencolor("black")
+color = ('black', "white")
 
 # Radio
 r = 200
@@ -14,5 +13,13 @@ En teoría, podemos usar la fórmula de los polígonos regulares para calcular l
 a = (180 * (n - 2)) / n.
 
 Nosotros, al menos por ahora, usaremos:
-a = ((180 * (n - 2) + 360 * (full_rotations - 1)) / n
+a = (180 * (n - 2) + 360 * (full_rotations - 1)) / n
 """
+
+a = (180 * (n - 2) + 360 * (full_rotations - 1)) / n
+
+while True:
+    pass
+    if abs(pos()) < 1:
+        break
+done()
