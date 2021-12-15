@@ -8,7 +8,7 @@ r = 300
 # Número de lados
 n = 528
 # Número de giros
-full_rotations = 263
+full_rotations = 265
 
 """Proceso a seguir
 En teoría, podemos usar la fórmula de los polígonos regulares para calcular las rotaciones necesarias para realizar la estrella. La fórmula de los ángulos de un polígono regular es
@@ -29,13 +29,16 @@ Estaba pensando en dividir para cerrar en ángulo. Sin embargo, más grande a, m
 
 x = ((180 * (n - 2)) / n)
 
-a = (180 - x) * full_rotations
+print(x)
 
+a = (180 - x) * full_rotations % 360
+
+t_rot = gcd(full_rotations, n)
 
 # TODO: Error found. Need to adjust y to circle containing the figure
-initial_coor = -r/2, -r
+initial_coor = -r/2, -r * (a / 180) / t_rot
 
-print(gcd(n, full_rotations))
+print(t_rot)
 sleep(2)
 
 up()
