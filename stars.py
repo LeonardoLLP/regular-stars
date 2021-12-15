@@ -29,13 +29,20 @@ x = ((180 * (n - 2)) / n)
 
 a = (180 - x) * full_rotations
 
-
-
+up()
+speed(2)
+goto(-r/2, -r/2)
+down()
 begin_fill()
 speed(0)
+rep = 1
 while True:
     forward(r)
     left(a)
-    if abs(pos()) < 0.1:
+    if abs(pos()) < 1:
         break
+
+    print(rep)
+    rep += 1
+
 done()
