@@ -38,7 +38,7 @@ internal_angle = 180 - a
 
 t_rot = gcd(full_rotations, n)
 
-# TODO: Error found. Need to adjust y to circle containing the figure
+"""Ni idea de donde sale el 120. El /2 si, pero el 120 no se porqué pero es el valor que funciona"""
 initial_coor = -r/2, -r * (internal_angle / 120)  # / t_rot ???
 
 print(t_rot)
