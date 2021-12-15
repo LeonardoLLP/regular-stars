@@ -1,12 +1,14 @@
 from turtle import *
-color = ('black', "white")
+from math import gcd
+from time import sleep
 
+color = ('black', "white")
 # Radio
 r = 300
 # Número de lados
 n = 528
 # Número de giros
-full_rotations = 79
+full_rotations = 263
 
 """Proceso a seguir
 En teoría, podemos usar la fórmula de los polígonos regulares para calcular las rotaciones necesarias para realizar la estrella. La fórmula de los ángulos de un polígono regular es
@@ -24,12 +26,17 @@ Multiplicamos el ángulo interior por full_rotations. Esto hace que se cierre m�
 Estaba pensando en dividir para cerrar en ángulo. Sin embargo, más grande a, más cerrado el ángulo interior (a determina rotación exterior)
 """
 
-# TODO: Full_rotations no funciona
+
 x = ((180 * (n - 2)) / n)
 
 a = (180 - x) * full_rotations
 
+
+# TODO: Error found. Need to adjust y to circle containing the figure
 initial_coor = -r/2, -r
+
+print(gcd(n, full_rotations))
+sleep(2)
 
 up()
 speed(2)
