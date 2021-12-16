@@ -10,29 +10,15 @@ n = 528
 # Número de giros
 full_rotations = 79
 
-"""Proceso a seguir
-En teoría, podemos usar la fórmula de los polígonos regulares para calcular las rotaciones necesarias para realizar la estrella. La fórmula de los ángulos de un polígono regular es
-a = (180 * (n - 2)) / n.
 
-Nosotros, al menos por ahora, usaremos:
-x = (180 * (n - 2) + 360 * (full_rotations - 1)) / n
-
-Esto nos dá el ángulo interior. Para pasarlo al ángulo exterior,
-
-a = 180 - x
-
-Multiplicamos el ángulo interior por full_rotations. Esto hace que se cierre más cuantas más rotaciones hallamos especificado. Tiene que estar entre 1 y n
-
-Estaba pensando en dividir para cerrar en ángulo. Sin embargo, más grande a, más cerrado el ángulo interior (a determina rotación exterior)
-"""
 
 # Internal angle of regular poligon
-x = ((180 * (n - 2)) / n)
+x = (180 * (n - 2)) / n
 
 
 print(x)
 
-a = (180 - x) * full_rotations % 360
+a = (180 - x) * full_rotations % n
 
 internal_angle = 180 - a
 
