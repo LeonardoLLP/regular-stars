@@ -1,6 +1,7 @@
 from turtle import *
 from math import gcd
 from time import sleep
+import time
 
 
 # Radio
@@ -9,6 +10,8 @@ r = 200
 n = 528
 # Número de giros
 full_rotations = 79
+# Real n (for calculations)
+rn = 528 / gcd(full_rotations, n)
 
 
 
@@ -22,8 +25,21 @@ a = (180 - x) * (full_rotations % n)
 # Internal angle of star
 internal_angle = 180 - a
 
+# Calculate where the center of the figure lands and use it to move the starting_coor
+# Time calculation:: https://stackoverflow.com/questions/1557571/how-do-i-get-time-of-a-python-programs-execution
+angle = 0
+y_pos = 0
+y_list = []
+start_time = time.time()
+for i in range(rn):
+    y_pos += None
 
 
+
+
+print("Time: {:4}".format(time.time() - start_time))
+print("Done")
+sleep(2)
 
 # Cálculo de coordenadas iniciales
 initial_coor = -r/2, -r * (internal_angle / 125)  # / t_rot ???
