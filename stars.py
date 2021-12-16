@@ -6,10 +6,24 @@ import time
 
 # Ditancia de lado
 d = 200  # TODO: hacer que se escale automáticamente para ocupar máximo posible (que se vea bien) de pantalla.
+
 # Número de lados
-n = 19  # input("Elige el número de lados: ")
+while True:
+    try:
+        n = int(input("Please choose number of sides: "))
+        break
+    except:
+        print("That's not a valid number.")
+
 # Número de giros
-full_rotations = 2  # input("Elige el número de rotaciones")
+while True:
+    try:
+        full_rotations = int(input("Choose rotation number (seed): "))
+        break
+    except:
+        print("That's not a valid number.")
+
+
 # Real n (for calculations)
 rn = n // gcd(full_rotations, n)
 
@@ -69,7 +83,7 @@ from tkinter import Tk
 root = Tk()
 screen_width = root.winfo_screenwidth() - 10
 screen_height = root.winfo_screenheight() - 10
-root.destroy()
+root.destroy()  # Don't want tinker window to open
 
 print(screen_width)
 print(screen_height)
