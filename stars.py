@@ -7,9 +7,9 @@ import time
 # Radio
 r = 200
 # Número de lados
-n = input("Elige el número de lados: ")
+n = 19  # input("Elige el número de lados: ")
 # Número de giros
-full_rotations = input("Elige el número de rotaciones")
+full_rotations = 2  # input("Elige el número de rotaciones")
 # Real n (for calculations)
 rn = n // gcd(full_rotations, n)
 
@@ -43,6 +43,8 @@ center_y = 0
 for coor in y_list:
     center_y += coor
 
+d = max(y_list)
+
 center_y /= rn
 print(center_y)
 print(angle_list)
@@ -61,7 +63,22 @@ print(center_y)
 # sleep(2)
 
 
-#! INITIAL SETUP
+#! CANVAS SETUP
+# Getting screen size: https://stackoverflow.com/questions/3949844/how-can-i-get-the-screen-size-in-tkinter/3949983#3949983
+from tkinter import Tk
+root = Tk()
+screen_width = root.winfo_screenwidth() - 10
+screen_height = root.winfo_screenheight() - 10
+root.destroy()
+
+print(screen_width)
+print(screen_height)
+
+screen = Screen()
+screen.setup(width=screen_width, height=screen_height, startx=None, starty=None)
+
+
+#! TURTLE SETUP
 color = ('black', "white")
 up()
 speed(1)
