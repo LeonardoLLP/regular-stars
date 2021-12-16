@@ -2,9 +2,9 @@ from turtle import *
 from math import gcd
 from time import sleep
 
-color = ('black', "white")
+
 # Radio
-r = 300
+r = 200
 # Número de lados
 n = 528
 # Número de giros
@@ -12,38 +12,42 @@ full_rotations = 79
 
 
 
+#! CALCULATIONS
 # Internal angle of regular poligon
 x = (180 * (n - 2)) / n
 
+# External angle of star
+a = (180 - x) * (full_rotations % n)
 
-print(x)
-
-a = (180 - x) * full_rotations % n
-
+# Internal angle of star
 internal_angle = 180 - a
 
-t_rot = gcd(full_rotations, n)
 
-"""Ni idea de donde sale el 120. El /2 si, pero el 120 no se porqué pero es el valor que funciona"""
+
+
+# Cálculo de coordenadas iniciales
 initial_coor = -r/2, -r * (internal_angle / 125)  # / t_rot ???
 
-print(t_rot)
-sleep(2)
 
+#! INITIAL SETUP
+color = ('black', "white")
 up()
 speed(2)
 goto(initial_coor)
 print(abs(pos()))
 down()
+
+#! DRAWING THE STAR
 begin_fill()
 speed(0)
+
 rep = 1
 while True:
     forward(r)
     left(a)
 
-    print(rep)
-    rep += 1
+    # print(rep)
+    # rep += 1
 
     if abs(initial_coor[0] - xcor()) < 0.5 and abs(initial_coor[1] - ycor()) < 0.5 :
         break
