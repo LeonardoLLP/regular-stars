@@ -7,9 +7,9 @@ import time
 # Radio
 r = 200
 # Número de lados
-n = 528
+n = input("Elige el número de lados: ")
 # Número de giros
-full_rotations = 79
+full_rotations = input("Elige el número de rotaciones")
 # Real n (for calculations)
 rn = n // gcd(full_rotations, n)
 
@@ -51,14 +51,14 @@ print(y_list)
 
 print("Time: {:4}".format(time.time() - start_time))
 print("Done")
-sleep(2)
+# sleep(2)
 
 # Cálculo de coordenadas iniciales
-initial_coor = -r/2, -center_y / 2
+initial_coor = -r/2, -center_y
 
 print(r)
 print(center_y)
-sleep(2)
+# sleep(2)
 
 
 #! INITIAL SETUP
@@ -66,7 +66,6 @@ color = ('black', "white")
 up()
 speed(1)
 goto(initial_coor)
-sleep(5)
 print(abs(pos()))
 down()
 
