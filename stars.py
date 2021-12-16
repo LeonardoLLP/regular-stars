@@ -4,8 +4,8 @@ from time import sleep
 import time
 
 
-# Radio
-r = 200
+# Ditancia de lado
+d = 200
 # Número de lados
 n = 19  # input("Elige el número de lados: ")
 # Número de giros
@@ -34,7 +34,7 @@ y_list = []
 angle_list = []
 start_time = time.time()
 for _ in range(rn):
-    y_pos += r * sin(angle)
+    y_pos += d * sin(angle)
     y_list.append(y_pos)
     angle += a_radians
     angle_list.append(angle)
@@ -43,7 +43,7 @@ center_y = 0
 for coor in y_list:
     center_y += coor
 
-d = max(y_list)
+diameter = max(y_list)
 
 center_y /= rn
 print(center_y)
@@ -56,9 +56,9 @@ print("Done")
 # sleep(2)
 
 # Cálculo de coordenadas iniciales
-initial_coor = -r/2, -center_y
+initial_coor = -d/2, -center_y
 
-print(r)
+print(d)
 print(center_y)
 # sleep(2)
 
@@ -92,7 +92,7 @@ speed(0)
 
 rep = 1
 while True:
-    forward(r)
+    forward(d)
     left(a)
 
     # print(rep)
