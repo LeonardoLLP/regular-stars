@@ -31,15 +31,22 @@ internal_angle = 180 - a
 angle = 0
 y_pos = 0
 y_list = []
+angle_list = []
 start_time = time.time()
-for i in range(rn):
+for _ in range(rn):
     y_pos += r * sin(angle)
     y_list.append(y_pos)
     angle += a_radians
+    angle_list.append(angle)
+    sleep(0.5)
+    print(y_pos)
+    print(angle)
 
 center_y = 0
 for coor in y_list:
     center_y += coor
+
+print(center_y)
 center_y /= rn
 
 
@@ -48,7 +55,7 @@ print("Done")
 sleep(2)
 
 # Cálculo de coordenadas iniciales
-initial_coor = -r/2, -r * (internal_angle / 125)  # / t_rot ???
+initial_coor = -r/2, -center_y / 2
 
 
 #! INITIAL SETUP
