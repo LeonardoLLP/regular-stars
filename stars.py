@@ -11,7 +11,7 @@ n = 528
 # Número de giros
 full_rotations = 79
 # Real n (for calculations)
-rn = 528 // gcd(full_rotations, n)
+rn = n // gcd(full_rotations, n)
 
 
 
@@ -38,16 +38,15 @@ for _ in range(rn):
     y_list.append(y_pos)
     angle += a_radians
     angle_list.append(angle)
-    sleep(0.5)
-    print(y_pos)
-    print(angle)
 
 center_y = 0
 for coor in y_list:
     center_y += coor
 
-print(center_y)
 center_y /= rn
+print(center_y)
+print(angle_list)
+print(y_list)
 
 
 print("Time: {:4}".format(time.time() - start_time))
@@ -57,12 +56,17 @@ sleep(2)
 # Cálculo de coordenadas iniciales
 initial_coor = -r/2, -center_y / 2
 
+print(r)
+print(center_y)
+sleep(2)
+
 
 #! INITIAL SETUP
 color = ('black', "white")
 up()
-speed(2)
+speed(1)
 goto(initial_coor)
+sleep(5)
 print(abs(pos()))
 down()
 
