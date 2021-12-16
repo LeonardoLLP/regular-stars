@@ -5,7 +5,7 @@ import time
 
 
 # Ditancia de lado
-d = 200
+d = 200  # TODO: hacer que se escale automáticamente para ocupar máximo posible (que se vea bien) de pantalla.
 # Número de lados
 n = 19  # input("Elige el número de lados: ")
 # Número de giros
@@ -31,7 +31,7 @@ internal_angle = 180 - a
 angle = 0
 y_pos = 0
 y_list = []
-angle_list = []
+angle_list = []  # TODO: Unnecesary variable. Just to check. Remove
 start_time = time.time()
 for _ in range(rn):
     y_pos += d * sin(angle)
