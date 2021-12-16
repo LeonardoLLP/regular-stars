@@ -8,20 +8,22 @@ import time
 d = 200  # TODO: hacer que se escale automáticamente para ocupar máximo posible (que se vea bien) de pantalla.
 
 # Número de lados
-while True:
-    try:
-        n = int(input("Please choose number of sides: "))
-        break
-    except:
-        print("That's not a valid number.")
+# while True:
+#     try:
+#         n = int(input("Please choose number of sides: "))
+#         break
+#     except:
+#         print("That's not a valid number.")
+n = 19
 
 # Número de giros
-while True:
-    try:
-        full_rotations = int(input("Choose rotation number (seed): "))
-        break
-    except:
-        print("That's not a valid number.")
+# while True:
+#     try:
+#         full_rotations = int(input("Choose rotation number (seed): "))
+#         break
+#     except:
+#         print("That's not a valid number.")
+full_rotations = 5
 
 
 # Real n (for calculations)
