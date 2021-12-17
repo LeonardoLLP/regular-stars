@@ -59,7 +59,7 @@ center_y = 0
 for coor in y_list:
     center_y += coor
 
-diameter = max(y_list)
+diameter = max(y_list) - min(y_list)
 
 center_y /= rn
 print(center_y)
@@ -71,8 +71,6 @@ print("Time: {:4}".format(time.time() - start_time))
 print("Done")
 # sleep(2)
 
-# Cálculo de coordenadas iniciales
-initial_coor = -d/2, -center_y
 
 print(d)
 print(center_y)
@@ -84,23 +82,34 @@ print(center_y)
 from tkinter import Tk
 root = Tk()
 screen_width = root.winfo_screenwidth() - 10
-screen_height = root.winfo_screenheight() - 10
+screen_height = root.winfo_screenheight() - 50
 root.destroy()  # Don't want tinker window to open
 
 print(screen_width)
 print(screen_height)
 
 screen = Screen()
-screen.setup(width=screen_width, height=screen_height, startx=None, starty=None)
+screen.setup(width=screen_width, height=screen_height, startx=None, starty=10)
 
 
 #! TURTLE SETUP
+
+# Update d
+d *= (screen_height - 50) / diameter
+center_y *= (screen_height - 50) / diameter
+# Cálculo de coordenadas iniciales
+initial_coor = -d/2, -center_y
+print(d)
+
 color = ('black', "white")
 up()
 speed(1)
 goto(initial_coor)
 print(abs(pos()))
 down()
+
+
+print(d)
 
 #! DRAWING THE STAR
 begin_fill()
