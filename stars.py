@@ -8,22 +8,22 @@ import time
 d = 200  # TODO: hacer que se escale automáticamente para ocupar máximo posible (que se vea bien) de pantalla.
 
 # Número de lados
-# while True:
-#     try:
-#         n = int(input("Please choose number of sides: "))
-#         break
-#     except:
-#         print("That's not a valid number.")
-n = 19
+while True:
+    try:
+        n = int(input("Please choose number of sides: "))
+        break
+    except:
+        print("That's not a valid number.")
+# n = 19
 
 # Número de giros
-# while True:
-#     try:
-#         full_rotations = int(input("Choose rotation number (seed): "))
-#         break
-#     except:
-#         print("That's not a valid number.")
-full_rotations = 5
+while True:
+    try:
+        full_rotations = int(input("Choose rotation number (seed): "))
+        break
+    except:
+        print("That's not a valid number.")
+# full_rotations = 5
 
 
 # Real n (for calculations)
@@ -81,7 +81,7 @@ print(center_y)
 # Getting screen size: https://stackoverflow.com/questions/3949844/how-can-i-get-the-screen-size-in-tkinter/3949983#3949983
 from tkinter import Tk
 root = Tk()
-screen_width = root.winfo_screenwidth() - 10
+screen_width = root.winfo_screenwidth() - 0
 screen_height = root.winfo_screenheight() - 50
 root.destroy()  # Don't want tinker window to open
 
@@ -89,7 +89,7 @@ print(screen_width)
 print(screen_height)
 
 screen = Screen()
-screen.setup(width=screen_width, height=screen_height, startx=None, starty=10)
+screen.setup(width=screen_width, height=screen_height, startx=None, starty=5)
 
 
 #! TURTLE SETUP
