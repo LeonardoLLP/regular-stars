@@ -3,6 +3,12 @@ from math import gcd, sin, pi
 from time import sleep
 import time
 
+t_speed = int(input("Please choose the speed of the turtle (1 slowest / 11 fastest): "))
+
+if t_speed < 1:
+    t_speed = 1
+elif t_speed > 10:
+    t_speed = 0
 
 # Ditancia de lado
 d = 200  # TODO: hacer que se escale automáticamente para ocupar máximo posible (que se vea bien) de pantalla.
@@ -85,9 +91,6 @@ screen_width = root.winfo_screenwidth() - 0
 screen_height = root.winfo_screenheight() - 50
 root.destroy()  # Don't want tinker window to open
 
-print(screen_width)
-print(screen_height)
-
 screen = Screen()
 screen.setup(width=screen_width, height=screen_height, startx=None, starty=5)
 
@@ -99,13 +102,11 @@ d *= (screen_height - 50) / diameter
 center_y *= (screen_height - 50) / diameter
 # Cálculo de coordenadas iniciales
 initial_coor = -d/2, -center_y
-print(d)
 
 color = ('black', "white")
 up()
 speed(1)
 goto(initial_coor)
-print(abs(pos()))
 down()
 
 
@@ -113,7 +114,7 @@ print(d)
 
 #! DRAWING THE STAR
 begin_fill()
-speed(0)
+speed(t_speed)
 
 rep = 1
 while True:
